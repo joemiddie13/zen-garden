@@ -6,6 +6,8 @@
   --neon-blue: #00f3ff;
   --neon-pink: #ff00ff;
   --dark-bg: #0a0a1f;
+  --grid-color: rgba(0, 243, 255, 0.1);
+  --text-glow: 0 0 10px rgba(0, 243, 255, 0.5);
 }
 
 body {
@@ -14,6 +16,11 @@ body {
   font-family: 'Space Mono', monospace;
   margin: 0;
   line-height: 1.6;
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: center center;
 }
 
 .page-wrapper {
@@ -27,11 +34,21 @@ h1, h2, h3 {
   color: var(--neon-blue);
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-shadow: var(--text-glow);
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 2rem 0;
 }
 
 .intro {
   padding: 2rem;
   margin-bottom: 3rem;
+  background: rgba(10, 10, 31, 0.8);
+  border: 1px solid var(--neon-blue);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
 }
 
 .summary {
