@@ -28,3 +28,37 @@ h1, h2, h3 {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+.intro {
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.summary {
+  position: relative;
+}
+
+.supporting {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.sidebar {
+  padding: 2rem;
+}
+
+/* Basic list resets */
+.design-selection ul,
+.design-archives ul,
+.zen-resources ul {
+  list-style: none;
+  padding: 0;
+}
+
+.design-selection li,
+.design-archives li,
+.zen-resources li {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
