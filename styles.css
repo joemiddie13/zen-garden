@@ -41,6 +41,7 @@ h1 {
   font-size: 4rem;
   text-align: center;
   margin: 2rem 0;
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 .intro {
@@ -63,6 +64,8 @@ h1 {
 
 .sidebar {
   padding: 2rem;
+  background: rgba(10, 10, 31, 0.9);
+  border-left: 1px solid var(--neon-pink);
 }
 
 /* Section Styles */
@@ -106,6 +109,15 @@ h1 {
 .zen-resources li {
   margin-bottom: 1rem;
   padding: 0.5rem;
+  border-bottom: 1px solid rgba(255, 0, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.design-selection li:hover,
+.design-archives li:hover,
+.zen-resources li:hover {
+  transform: translateX(10px);
+  background: rgba(0, 243, 255, 0.1);
 }
 
 /* Link Styles */
@@ -135,4 +147,32 @@ a::after {
 
 a:hover::after {
   transform: scaleX(1);
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+  }
+  to {
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+  }
+}
+
+/* Add extra overlay effect */
+.extra1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 243, 255, 0.03) 2px,
+    rgba(0, 243, 255, 0.03) 4px
+  );
+  z-index: -1;
 }
