@@ -1,7 +1,14 @@
-/* Retro Futuristic Theme for CSS Zen Garden */
+/* ==========================================================================
+   Retro Futuristic Theme for CSS Zen Garden
+   ========================================================================== */
+
+/* Typography Imports
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+/* CSS Variables / Custom Properties
+   ========================================================================== */
 :root {
   --neon-blue: #00f3ff;
   --neon-pink: #ff00ff;
@@ -10,6 +17,8 @@
   --text-glow: 0 0 10px rgba(0, 243, 255, 0.5);
 }
 
+/* Base Styles
+   ========================================================================== */
 body {
   background: var(--dark-bg);
   color: #ffffff;
@@ -23,12 +32,22 @@ body {
   background-position: center center;
 }
 
+/* Layout & Container
+   ========================================================================== */
 .page-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
 
+.supporting {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Typography
+   ========================================================================== */
 h1, h2, h3 {
   font-family: 'Orbitron', sans-serif;
   color: var(--neon-blue);
@@ -44,6 +63,8 @@ h1 {
   animation: glow 1.5s ease-in-out infinite alternate;
 }
 
+/* Main Content Sections
+   ========================================================================== */
 .intro {
   padding: 2rem;
   margin-bottom: 3rem;
@@ -56,19 +77,8 @@ h1 {
   position: relative;
 }
 
-.supporting {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-.sidebar {
-  padding: 2rem;
-  background: rgba(10, 10, 31, 0.9);
-  border-left: 1px solid var(--neon-pink);
-}
-
-/* Section Styles */
+/* Content Sections & Cards
+   ========================================================================== */
 .preamble {
   background: rgba(255, 0, 255, 0.05);
   padding: 2rem;
@@ -88,6 +98,8 @@ h1 {
   transition: transform 0.3s ease;
 }
 
+/* Hover Effects
+   ========================================================================== */
 .explanation:hover, 
 .participation:hover, 
 .benefits:hover, 
@@ -96,7 +108,14 @@ h1 {
   box-shadow: 0 5px 15px rgba(0, 243, 255, 0.2);
 }
 
-/* Basic list resets */
+/* Sidebar & Navigation
+   ========================================================================== */
+.sidebar {
+  padding: 2rem;
+  background: rgba(10, 10, 31, 0.9);
+  border-left: 1px solid var(--neon-pink);
+}
+
 .design-selection ul,
 .design-archives ul,
 .zen-resources ul {
@@ -113,14 +132,8 @@ h1 {
   transition: transform 0.3s ease;
 }
 
-.design-selection li:hover,
-.design-archives li:hover,
-.zen-resources li:hover {
-  transform: translateX(10px);
-  background: rgba(0, 243, 255, 0.1);
-}
-
-/* Link Styles */
+/* Link Styles & Interactions
+   ========================================================================== */
 a {
   color: var(--neon-pink);
   text-decoration: none;
@@ -145,21 +158,13 @@ a::after {
   transition: transform 0.3s ease;
 }
 
-a:hover::after {
-  transform: scaleX(1);
-}
-
-/* Animations */
+/* Animations & Effects
+   ========================================================================== */
 @keyframes glow {
-  from {
-    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
-  }
-  to {
-    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-  }
+  from { text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue); }
+  to { text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue); }
 }
 
-/* Add extra overlay effect */
 .extra1 {
   position: fixed;
   top: 0;
@@ -175,4 +180,26 @@ a:hover::after {
     rgba(0, 243, 255, 0.03) 4px
   );
   z-index: -1;
+}
+
+/* Media Queries
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .supporting {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .page-wrapper {
+    padding: 1rem;
+  }
+  
+  .sidebar {
+    border-left: none;
+    border-top: 1px solid var(--neon-pink);
+    margin-top: 2rem;
+  }
 }
